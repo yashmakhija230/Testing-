@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeadClerk AI — WhatsApp Sales Copilot</title>
+  <style>:root{--bg:#f3f1ec;--card:#fbfaf7;--ink:#171714;--muted:#77736c;--line:#dedad2;--accent:#2e5cff;--green:#16865a}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}.shell{max-width:1180px;margin:auto;padding:48px 22px 80px}.hero{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;padding:10px 2px 34px}.eyebrow,.card small{letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-size:11px}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.055em;margin:13px 0 18px;max-width:850px}.hero h1 em{font-family:Georgia,serif;font-weight:400}.hero p{font-size:18px;line-height:1.55;color:#55514b;max-width:720px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.chips span{padding:8px 11px;border:1px solid var(--line);border-radius:999px;font-size:12px;background:rgba(255,255,255,.45)}.metric{background:#171714;color:white;border-radius:20px;padding:22px;min-width:210px}.metric small,.metric span{display:block;color:#aaa}.metric strong{font-size:38px;letter-spacing:-.04em;display:block;margin:6px 0}.grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 8px 24px rgba(30,30,25,.03)}.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.card-head h2{margin:3px 0 0;font-size:22px;letter-spacing:-.02em}.card-head button,.actions button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:10px 13px;cursor:pointer}.status{color:var(--green);font-size:12px}label{display:block;font-size:12px;color:var(--muted);margin:13px 0}input,textarea,select{width:100%;margin-top:7px;border:1px solid var(--line);border-radius:12px;background:white;padding:12px 13px;font:inherit;color:var(--ink);outline:none}textarea{min-height:76px;resize:vertical}.chat-window{min-height:230px;padding:18px;background:#ece9e2;border-radius:18px;margin-bottom:16px;display:flex;flex-direction:column;gap:12px;justify-content:flex-end}.bubble{max-width:84%;padding:12px 14px;border-radius:16px;line-height:1.45}.customer{align-self:flex-end;background:#d8f8c6}.ai{background:white;border:1px solid #e5e0d7}.actions{display:flex;gap:8px}.actions .primary{background:var(--ink);color:#fff;border-color:var(--ink);flex:1}.insights{display:grid;grid-template-columns:.8fr .7fr 1.5fr;gap:8px;margin-top:14px}.insights>div{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}.insights small{display:block;margin-bottom:5px}.insights strong{font-size:13px;line-height:1.3}.why{margin-top:16px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.three>div{border-top:1px solid var(--line);padding-top:18px}.three b{color:var(--accent)}.three h3{margin:8px 0 5px}.three p{color:var(--muted);margin:0;line-height:1.5}@media(max-width:820px){.hero,.grid,.three{grid-template-columns:1fr}.metric{min-width:0}.insights{grid-template-columns:1fr}.shell{padding-top:28px}}
+</style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">CLICKABLE DEMO · INDIA-FIRST</span>
+        <h1>Turn WhatsApp enquiries into <em>qualified leads.</em></h1>
+        <p>LeadClerk reads a customer message, drafts a natural reply, scores buying intent, and tells the business what to do next.</p>
+        <div class="chips"><span>Fast replies</span><span>Lead score</span><span>Human handoff</span><span>Gemini-ready</span></div>
+      </div>
+      <div class="metric"><small>Suggested offer</small><strong>₹2,999</strong><span>setup + ₹1,499/mo</span></div>
+    </section>
+
+    <section class="grid">
+      <article class="card setup">
+        <div class="card-head"><div><small>01</small><h2>Business brain</h2></div><button id="save">Save profile</button></div>
+        <label>Business name<input id="businessName" placeholder="e.g. Aura Salon" /></label>
+        <label>Category<input id="category" placeholder="Salon, gym, cafe, real estate…" /></label>
+        <label>Products / services<textarea id="services" placeholder="Haircut, hair spa, bridal makeup…"></textarea></label>
+        <label>Known prices<textarea id="prices" placeholder="Haircut ₹399, spa from ₹899…"></textarea></label>
+        <label>Policies / facts<textarea id="policies" placeholder="Open 10am–8pm. Sunday appointment only…"></textarea></label>
+        <label>Tone<select id="tone"><option>Friendly, concise, Hinglish-friendly</option><option>Professional and polished</option><option>Warm and premium</option><option>Casual Gen-Z</option></select></label>
+      </article>
+
+      <article class="card playground">
+        <div class="card-head"><div><small>02</small><h2>Reply playground</h2></div><span class="status">● browser demo</span></div>
+        <div class="chat-window">
+          <div class="bubble customer" id="customerPreview">“Hi haircut ka price kya hai aur kal 6 baje slot hai?”</div>
+          <div class="bubble ai" id="aiReply">Set up the business profile, then test a customer message below.</div>
+        </div>
+        <label>Customer message<textarea id="message">Hi haircut ka price kya hai aur kal 6 baje slot hai?</textarea></label>
+        <div class="actions"><button class="primary" id="generate">Generate reply</button><button id="copy">Copy</button></div>
+        <div class="insights">
+          <div><small>Intent</small><strong id="intent">—</strong></div>
+          <div><small>Lead score</small><strong id="score">—</strong></div>
+          <div><small>Next action</small><strong id="next">—</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card why">
+      <small>SELL THE OUTCOME, NOT “AI”</small>
+      <div class="three"><div><b>1.</b><h3>Reply instantly</h3><p>No missed “price?” or “available?” enquiries.</p></div><div><b>2.</b><h3>Spot hot leads</h3><p>Buying intent gets surfaced instead of buried in chat.</p></div><div><b>3.</b><h3>Tell staff what to do</h3><p>Quote, book, follow up, or hand off to a human.</p></div></div>
+    </section>
+  </main>
+  <script>const ids=['businessName','category','services','prices','policies','tone'];
+const $=id=>document.getElementById(id);
+const saved=JSON.parse(localStorage.getItem('leadclerk-profile')||'{}');
+ids.forEach(id=>{ if(saved[id]) $(id).value=saved[id]; });
+function fallback(message, profile={}) {
+  const text=(message||'').toLowerCase();
+  let intent='general', score=45;
+  let reply=`Thanks for reaching out to ${profile.businessName||'us'}! How can I help you today?`;
+  let action='Ask one short qualifying question.';
+  if (/price|cost|rate|kitna|charges|₹|rs\.?/.test(text)) {
+    intent='pricing'; score=78;
+    reply=`Sure — I can help with pricing. ${profile.services?`We currently offer: ${profile.services}. `:''}${profile.prices?`Known prices: ${profile.prices}. `:''}Tell me which option you’re interested in and I’ll share the exact next step.`;
+    action='Share relevant price and ask when they want to buy/book.';
+  }
+  if (/book|appointment|slot|available|today|tomorrow|kal|aaj/.test(text)) {
+    intent='booking'; score=88;
+    reply=`Absolutely. I can help you book this. ${profile.prices?`For reference: ${profile.prices}. `:''}What day and preferred time works for you?`;
+    action='Capture date/time + customer name/phone.';
+  }
+  if (/buy|order|want|chahiye|purchase|final/.test(text)) {
+    intent='purchase'; score=94;
+    reply='Great — I can get this moving. Please share the exact item/service you want and your preferred date/quantity, and I’ll prepare the next step.';
+    action='Create quote/payment step and hand off if needed.';
+  }
+  if (/complaint|refund|bad|late|problem|issue|angry|bekar/.test(text)) {
+    intent='support'; score=35;
+    reply='I’m sorry you’ve had this experience. Please share your order/booking details and what went wrong — I’ll flag this for a person to resolve quickly.';
+    action='Human handoff — do not auto-close.';
+  }
+  return {reply,intent,leadScore:score,nextAction:action};
+}
+$('save').onclick=()=>{const p=Object.fromEntries(ids.map(id=>[id,$(id).value]));localStorage.setItem('leadclerk-profile',JSON.stringify(p));$('save').textContent='Saved ✓';setTimeout(()=>$('save').textContent='Save profile',1200)};
+$('generate').onclick=()=>{const message=$('message').value.trim();if(!message)return;const profile=Object.fromEntries(ids.map(id=>[id,$(id).value]));$('customerPreview').textContent='“'+message+'”';const d=fallback(message,profile);$('aiReply').textContent=d.reply;$('intent').textContent=d.intent;$('score').textContent=d.leadScore+'/100';$('next').textContent=d.nextAction;};
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('aiReply').textContent);$('copy').textContent='Copied ✓';setTimeout(()=>$('copy').textContent='Copy',1000)}catch(e){alert('Copy the reply manually.')}};
+</script>
+</body>
+</html>
